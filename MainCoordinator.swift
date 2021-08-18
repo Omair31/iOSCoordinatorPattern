@@ -17,7 +17,13 @@ class MainCoordinator: Coordinator {
     
     func start() {
         let vc = ViewController.instantiate()
-        vc.coordinator = self
+        vc.didBuySubscription = { [weak self] items in
+            self?.buy(items: items)
+        }
+        
+        vc.didCreateAccount = { [weak self] name, password in
+            self?.createAccount(username: name, password: password)
+        }
         navigationController.pushViewController(vc, animated: false)
     }
     

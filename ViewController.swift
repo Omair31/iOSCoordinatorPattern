@@ -9,7 +9,8 @@ import UIKit
 
 class ViewController: UIViewController, StoryBoarded {
     
-    weak var coordinator: MainCoordinator?
+    var didBuySubscription: (([String]) -> Void)?
+    var didCreateAccount: ((String, String) -> Void)?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,12 +19,12 @@ class ViewController: UIViewController, StoryBoarded {
     }
     
     @IBAction func buyButtonPressed(_ sender: UIButton) {
-        coordinator?.buy(items: ["apples", "oranges", "bananas"])
+        didBuySubscription?(["apples", "oranges", "bananas"])
     }
     
     
     @IBAction func createAccountPressed(_ sender: UIButton) {
-        coordinator?.createAccount(username: "omeir35", password: "someSecurePassword")
+        didCreateAccount?("omeir35","someSecurePassword")
     }
     
 
