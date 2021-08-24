@@ -9,7 +9,7 @@ import UIKit
 
 class ViewController: UIViewController, StoryBoarded {
     
-    weak var coordinator: MainCoordinator?
+    weak var coordinator: Coordinator?
 
     override func viewDidLoad() {
         super.viewDidLoad()

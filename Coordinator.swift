@@ -7,8 +7,12 @@
 
 import UIKit
 
-protocol Coordinator {
+protocol Coordinator: class {
     var navigationController: UINavigationController { get set }
     
-    func start() 
+    func start()
+    
+    func buy(items: [String])
+    
+    func createAccount(username: String, password: String)
 }
